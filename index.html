@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Pizza Order</title>
+  </head>
+  <body>
+    <div class="container">
+      <div>🍕</div>
+      <h3>Pizza Menu</h3>
+      <div class="pizza-item">
+        <h3>Small Pizza</h3>
+        <div>RM 15</div>
+        <div>
+          <span>Pepperoni + RM 3</span>
+          <span>Cheese + RM 6</span>
+        </div>
+      </div>
+      <div class="pizza-item">
+        <h3>Medium Pizza</h3>
+        <div>RM 22</div>
+        <div>
+          <span>Pepperoni + RM 5</span>
+          <span>Cheese + RM 6</span>
+        </div>
+      </div>
+      <div class="pizza-item">
+        <h3>Large Pizza</h3>
+        <div>RM 30</div>
+        <div>
+          <span>Pepperoni + RM 6</span>
+          <span>Cheese + RM 6</span>
+        </div>
+      </div>
+      <div style="margin-top: 30px; gap: 50px">
+        <button onclick="openOrderModal()">Order</button>
+        <button onclick="openOrderListModal()">View Order</button>
+      </div>
+      <div id="submit-order-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('submit')">&times;</span>
+          <h2>Order Submitted, Thank You</h2>
+        </div>
+      </div>
+      <div id="order-modal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('order')">&times;</span>
+          <h3>Order your pizza</h3>
+          <div class="pizza-size">
+            <input
+              class="pizza-size-type"
+              onclick="choosePizzaSize('small')"
+              type="checkbox"
+              id="small"
+              name="small"
+            />
+            <label for="small">Small</label>
+          </div>
+          <div class="pizza-size">
+            <input
+              class="pizza-size-type"
+              onclick="choosePizzaSize('medium')"
+              type="checkbox"
+              id="medium"
+              name="medium"
+            />
+            <label for="medium">Medium</label>
+          </div>
+          <div class="pizza-size">
+            <input
+              class="pizza-size-type"
+              onclick="choosePizzaSize('large')"
+              type="checkbox"
+              id="large"
+              name="large"
+            />
+            <label for="large">Large</label>
+          </div>
+          <div class="extra-options">
+            <h4>Extra Options:</h4>
+            <div class="cheese">
+              <input type="checkbox" id="cheese" name="cheese" />
+              <label for="cheese">Extra Cheese</label>
+            </div>
+            <div class="pepperoni">
+              <input type="checkbox" id="pepperoni" name="pepperoni" />
+              <label for="pepperoni">Extra Pepperoni</label>
+            </div>
+          </div>
+          <div class="input-field">
+            <label for="pizza-quantity">Quantity:</label>
+            <input type="number" id="pizza-quantity" min="1" value="1" />
+          </div>
+          <div><button onclick="addToOrder()">Add to Order</button></div>
+        </div>
+      </div>
+      <div id="order-list-modal" class="modal">
+        <div class="modal-content" style="width: 500px">
+          <span class="close" onclick="closeModal('order-list')">&times;</span>
+          <h4>Order List</h4>
+          <div id="order-list-field"></div>
+        </div>
+      </div>
+      <div class="total-price">
+        <div>Total Price: <span id="total-price">RM 0</span></div>
+        <button onclick="submitOrder()">Submit Order</button>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+.container {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.pizza-item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.pizza-item:last-child {
+  border-bottom: none;
+}
+.total-price {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+}
+.modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+#order-modal {
+  display: none;
+}
+#order-list-modal {
+  display: none;
+}
+#submit-order-modal {
+  display: none;
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 10px;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.order-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.order-item > div {
+  flex: 1;
+  text-align: center;
+}
+
+.order-item > div:first-child {
+  text-align: left;
+}
+
+.order-item > div:last-child {
+  text-align: right;
+}
